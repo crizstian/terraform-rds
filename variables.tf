@@ -4,6 +4,9 @@
 variable "region" {}
 variable "access_key" {}
 variable "secret_key" {}
+variable "db_name" {}
+variable "vpc_id" {}
+variable "public_subnets" {}
 
 variable "db_password" {
   description = "RDS root user password"
