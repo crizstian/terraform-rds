@@ -23,7 +23,7 @@ module "vpc" {
 
 resource "aws_db_subnet_group" "education" {
   name       = var.db_name
-  subnet_ids = var.public_subnets
+  subnet_ids = module.vpc.public_subnets
 
   tags = {
     Name = "PoV-Demo"
@@ -32,7 +32,7 @@ resource "aws_db_subnet_group" "education" {
 
 resource "aws_security_group" "rds" {
   name   = var.db_name
-  vpc_id = var.vpc_id
+  vpc_id = module.vpc.vpc_id
 
   ingress {
     from_port   = 5432
