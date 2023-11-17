@@ -55,7 +55,7 @@ resource "aws_security_group" "rds" {
 
 resource "aws_db_parameter_group" "education" {
   name   = var.db_name
-  family = "postgres14"
+  family = "postgres16"
 
   parameter {
     name  = "log_connections"
